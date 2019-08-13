@@ -55,8 +55,8 @@
 <!--begin::Layout Skins(used by all pages) -->
 <link href="{{ asset ('assets/css/demo1/skins/header/base/light.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset ('assets/css/demo1/skins/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset ('assets/css/demo1/skins/brand/dark.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset ('assets/css/demo1/skins/aside/dark.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset ('assets/css/demo1/skins/brand/light.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset ('assets/css/demo1/skins/aside/light.css') }}" rel="stylesheet" type="text/css" />
 
 <!--end::Layout Skins -->
 <link rel="shortcut icon" href="{{ asset ('assets/media/logos/logo-pep-1.png') }}" />
