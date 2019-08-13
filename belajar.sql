@@ -11,120 +11,9 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- membuang struktur untuk table belajar.beasiswa
-CREATE TABLE IF NOT EXISTS `beasiswa` (
-  `id_beasiswa` int(10) NOT NULL AUTO_INCREMENT,
-  `kd_beasiswa` varchar(50) DEFAULT NULL,
-  `namabeasiswa` varchar(50) DEFAULT NULL,
-  `jenisbeasiswa` varchar(50) DEFAULT NULL,
-  `tanggalbeasiswa` date DEFAULT NULL,
-  PRIMARY KEY (`id_beasiswa`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.beasiswa: ~2 rows (lebih kurang)
-/*!40000 ALTER TABLE `beasiswa` DISABLE KEYS */;
-INSERT INTO `beasiswa` (`id_beasiswa`, `kd_beasiswa`, `namabeasiswa`, `jenisbeasiswa`, `tanggalbeasiswa`) VALUES
-	(1, 'BSW-0001', 'Penghargaan1', 'BOS', '1889-09-09'),
-	(2, 'BSW-0002', 'tess1', 'BOS', '2019-08-16');
-/*!40000 ALTER TABLE `beasiswa` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.cpl_prodi
-CREATE TABLE IF NOT EXISTS `cpl_prodi` (
-  `id_cpl_prodi` int(10) NOT NULL AUTO_INCREMENT,
-  `kd_cpl_prodi` varchar(50) DEFAULT NULL,
-  `namacpl_prodi` varchar(50) DEFAULT NULL,
-  `bahankajian` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id_cpl_prodi`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.cpl_prodi: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `cpl_prodi` DISABLE KEYS */;
-INSERT INTO `cpl_prodi` (`id_cpl_prodi`, `kd_cpl_prodi`, `namacpl_prodi`, `bahankajian`) VALUES
-	(1, '0001', 'Kerjasama', 'Tentang kerjasama');
-/*!40000 ALTER TABLE `cpl_prodi` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.dosen_geologi
-CREATE TABLE IF NOT EXISTS `dosen_geologi` (
-  `id_dosen_geologi` int(10) NOT NULL AUTO_INCREMENT,
-  `kd_dosen_geologi` varchar(50) DEFAULT NULL,
-  `namadosen_geologi` varchar(50) DEFAULT NULL,
-  `tldosen_geologi` date DEFAULT NULL,
-  `pendidikan_geologi` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id_dosen_geologi`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.dosen_geologi: ~7 rows (lebih kurang)
-/*!40000 ALTER TABLE `dosen_geologi` DISABLE KEYS */;
-INSERT INTO `dosen_geologi` (`id_dosen_geologi`, `kd_dosen_geologi`, `namadosen_geologi`, `tldosen_geologi`, `pendidikan_geologi`) VALUES
-	(1, 'DSN-G-0001', 'Nendi Rohaendi, S.T.,M.T., M.Sc', '1977-06-06', 'University Twente / GeoInformation Science and Earth Observation'),
-	(2, 'DSN-G-0002', 'Iwan Fahlevi Setiawan, S.T., M.T.', '1978-05-22', ' ITB / Hidrogeologi'),
-	(3, 'DSN-G-0003', 'Hilman Suwargana, S.T.,M.T.', '1979-11-30', 'ITB / Rekayasa Pertambangan'),
-	(4, 'DSN-G-0004', 'Arif Budiyono, S.T., M.T.', '1978-04-19', 'ITB / Rekayasa Pertambangan'),
-	(5, 'DSN-G-0005', 'Fiati Nurmaya., S.T.,M.T.', '1977-01-30', 'ITB / Teknik Geologi'),
-	(6, 'DSN-G-0006', 'Mirna Mariana, M.T.', '1981-03-01', 'ITB / Teknik Geologi'),
-	(7, 'DSN-G-0007', 'Antonius Alex Harmoko, S.T., M.T.', '1978-10-20', 'UGM/ Geofisika');
-/*!40000 ALTER TABLE `dosen_geologi` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.dosen_metalurgi
-CREATE TABLE IF NOT EXISTS `dosen_metalurgi` (
-  `id_dosen_metalurgi` int(10) NOT NULL AUTO_INCREMENT,
-  `kd_dosen_metalurgi` varchar(50) DEFAULT NULL,
-  `namadosen_metalurgi` varchar(50) DEFAULT NULL,
-  `tldosen_metalurgi` date DEFAULT NULL,
-  `pendidikan_metalurgi` varchar(225) DEFAULT NULL,
-  PRIMARY KEY (`id_dosen_metalurgi`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.dosen_metalurgi: ~6 rows (lebih kurang)
-/*!40000 ALTER TABLE `dosen_metalurgi` DISABLE KEYS */;
-INSERT INTO `dosen_metalurgi` (`id_dosen_metalurgi`, `kd_dosen_metalurgi`, `namadosen_metalurgi`, `tldosen_metalurgi`, `pendidikan_metalurgi`) VALUES
-	(1, 'DSN-M-0001', 'Dr. Mont. Imelda Hutabarat, S.T., M.T.', '1975-09-06', 'Montan Universitaet Leoben / S3 Mining and Metallurgical Sciences'),
-	(2, 'DSN-M-0002', 'Revi Timora Salajar, S.T., M.T.', '1976-09-06', 'ITB/ Manajemen Industri'),
-	(3, 'DSN-M-0003', 'Aseani Ariesta, S.T.,M.T.', '1981-04-17', 'ITB/ Teknik Lingkungan'),
-	(4, 'DSN-M-0004', 'Charles Tambunan, S.T., M.T.', '1977-11-21', 'ITB/ Rekayasa Pertambangan'),
-	(5, 'DSN-M-0005', 'Yudha Yanuar Adisaputra, S.T., M.T.', '1983-01-24', 'ITB/ Rekayasa Pertambangan'),
-	(6, 'DSN-M-0006', 'Puguh Setiyanto, S.T., M.T.', '1972-06-15', 'Universitas Padjajaran/ Teknik Geologi');
-/*!40000 ALTER TABLE `dosen_metalurgi` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.dosen_pertambangan
-CREATE TABLE IF NOT EXISTS `dosen_pertambangan` (
-  `id_dosen_pertambangan` int(10) NOT NULL AUTO_INCREMENT,
-  `kd_dosen_pertambangan` varchar(50) DEFAULT NULL,
-  `namadosen_pertambangan` varchar(50) DEFAULT NULL,
-  `tldosen_pertambangan` date DEFAULT NULL,
-  `pendidikan_pertambangan` varchar(225) DEFAULT NULL,
-  PRIMARY KEY (`id_dosen_pertambangan`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.dosen_pertambangan: ~6 rows (lebih kurang)
-/*!40000 ALTER TABLE `dosen_pertambangan` DISABLE KEYS */;
-INSERT INTO `dosen_pertambangan` (`id_dosen_pertambangan`, `kd_dosen_pertambangan`, `namadosen_pertambangan`, `tldosen_pertambangan`, `pendidikan_pertambangan`) VALUES
-	(1, 'DSN-P-0001', 'Handoko Setiadji, S.T., M.I.L.', '1972-07-08', 'UNPAD/ Ilmu Lingkungan'),
-	(2, 'DSN-P-0002', 'Harry Wibawa, S.T., M.T.', '1972-05-13', 'ITB/ Rekayasa Pertambangan'),
-	(3, 'DSN-P-0003', 'Wanda Adinugraha, S.T., M.T.', '1978-07-05', 'ITB/ Rekayasa Pertambangan'),
-	(4, 'DSN-P-0004', 'Yudiana Hadiyat, S.T., M.Eng', '1974-05-07', 'UGM/ Geologi Pertambangan'),
-	(5, 'DSN-P-0005', 'Herlinawati, S.T., M.T.', '1982-04-30', 'ITB/ Rekayasa Pertambangan'),
-	(6, 'DSN-P-0006', 'Leni Nurliana, S.T., M.T.', '1982-04-30', 'ITB/ Rekayasa Pertambangan');
-/*!40000 ALTER TABLE `dosen_pertambangan` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.fakultas
-CREATE TABLE IF NOT EXISTS `fakultas` (
-  `id_fakultas` int(11) NOT NULL AUTO_INCREMENT,
-  `namafakultas` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id_fakultas`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.fakultas: ~3 rows (lebih kurang)
-/*!40000 ALTER TABLE `fakultas` DISABLE KEYS */;
-INSERT INTO `fakultas` (`id_fakultas`, `namafakultas`) VALUES
-	(1, 'Teknologi Pertambangan'),
-	(2, 'Teknologi Metalurgi'),
-	(3, 'Teknologi Geologi');
-/*!40000 ALTER TABLE `fakultas` ENABLE KEYS */;
-
 -- membuang struktur untuk table belajar.jobs
 CREATE TABLE IF NOT EXISTS `jobs` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `queue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `attempts` tinyint(3) unsigned NOT NULL,
@@ -139,267 +28,166 @@ CREATE TABLE IF NOT EXISTS `jobs` (
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 
--- membuang struktur untuk table belajar.jurusan
-CREATE TABLE IF NOT EXISTS `jurusan` (
-  `id_jurusan` int(11) NOT NULL AUTO_INCREMENT,
-  `namajurusan` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id_jurusan`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.jurusan: ~2 rows (lebih kurang)
-/*!40000 ALTER TABLE `jurusan` DISABLE KEYS */;
-INSERT INTO `jurusan` (`id_jurusan`, `namajurusan`) VALUES
-	(1, 'Pertambangan'),
-	(2, 'Geologi');
-/*!40000 ALTER TABLE `jurusan` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.kategori
-CREATE TABLE IF NOT EXISTS `kategori` (
-  `id_kategori` int(11) NOT NULL AUTO_INCREMENT,
-  `kd_kategori` varchar(50) DEFAULT NULL,
-  `nama_kategori` varchar(50) DEFAULT NULL,
-  `deskripsi` text,
-  `gambar` text,
-  PRIMARY KEY (`id_kategori`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.kategori: ~11 rows (lebih kurang)
-/*!40000 ALTER TABLE `kategori` DISABLE KEYS */;
-INSERT INTO `kategori` (`id_kategori`, `kd_kategori`, `nama_kategori`, `deskripsi`, `gambar`) VALUES
-	(1, 'KT-0001', 'nama', 'nama', 'me.png'),
-	(2, 'KT-0002', 'wda', 'asdasd', '1546582525000-kampus .jpg'),
-	(3, 'KT-0003', 'asas', 'asas', 'absensi.jpg'),
-	(4, 'KT-0004', 'wetw', 'fgg', 'logobcp.png'),
-	(5, 'KT-0005', 'dsvsd', 'sdfsdf', '10.membuattabelmahasiswa.JPG'),
-	(6, 'KT-0006', '.m.', 'jkhjk', 'a.JPG'),
-	(7, 'KT-0007', 'asdasd', 'asdasdasd', 'aj.JPG'),
-	(8, 'KT-0008', 'zxczc', 'acas', 'aj.JPG'),
-	(9, 'KT-0009', 'asdasf', 'sgsfs', 'a.JPG'),
-	(10, 'KT-0010', 'ff', 'sdfsdf', 'bg-01.jpg'),
-	(11, 'KT-0011', 'sdfsds', 'dfsdf', '1546582525000-kampus .jpg');
-/*!40000 ALTER TABLE `kategori` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.mahasiswa
-CREATE TABLE IF NOT EXISTS `mahasiswa` (
-  `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT,
-  `kd_mahasiswa` varchar(50) DEFAULT '0',
-  `namamahasiswa` varchar(50) DEFAULT '0',
-  `alamatmahasiswa` varchar(50) DEFAULT '0',
-  `jabatan` varchar(50) DEFAULT '0',
-  `gambar` text,
-  `nim` varchar(50) DEFAULT NULL,
-  `nama_lengkap` varchar(50) DEFAULT NULL,
-  `semester` varchar(10) DEFAULT NULL,
-  `prodi` varchar(50) DEFAULT NULL,
-  `jurusan` varchar(50) DEFAULT NULL,
-  `tempatlahir` varchar(50) DEFAULT NULL,
-  `tanggallahir` datetime DEFAULT NULL,
-  `jeniskelamin` varchar(15) DEFAULT NULL,
-  `agama` varchar(15) DEFAULT NULL,
-  `alamat` text,
-  `status` char(50) DEFAULT NULL,
-  PRIMARY KEY (`id_mahasiswa`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.mahasiswa: ~4 rows (lebih kurang)
-/*!40000 ALTER TABLE `mahasiswa` DISABLE KEYS */;
-INSERT INTO `mahasiswa` (`id_mahasiswa`, `kd_mahasiswa`, `namamahasiswa`, `alamatmahasiswa`, `jabatan`, `gambar`, `nim`, `nama_lengkap`, `semester`, `prodi`, `jurusan`, `tempatlahir`, `tanggallahir`, `jeniskelamin`, `agama`, `alamat`, `status`) VALUES
-	(1, '0', '0', '0', '0', '0', '361755491092', 'kharisma', '2', 'teknik', 'informatika', 'banyuwangi', '1999-02-26 00:00:00', 'L', 'Islam', 'banyuwangi', 'mahasiswa'),
-	(3, 'MHS-0003', '0', '0', '0', '0', '361755401091', 'Fajrul Falakh Ardiansyah', '5', 'teknik', 'informatika', 'rembang', '1998-11-17 00:00:00', 'L', 'Islam', 'banyuwangi', 'mahasiswa'),
-	(4, 'MHS-0001', 'asasin', 'asa', 'asass', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(5, 'MHS-0002', 'da', 'a', 'q', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-/*!40000 ALTER TABLE `mahasiswa` ENABLE KEYS */;
-
 -- membuang struktur untuk table belajar.matakuliah_geologi
 CREATE TABLE IF NOT EXISTS `matakuliah_geologi` (
-  `id_matakuliah_geologi` int(11) NOT NULL AUTO_INCREMENT,
-  `kd_matakuliah_geologi` varchar(50) NOT NULL DEFAULT '0',
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `no` int(11) DEFAULT NULL,
-  `namamatakuliah_geologi` varchar(50) DEFAULT NULL,
+  `matakuliah` varchar(50) DEFAULT NULL,
   `semester` int(11) DEFAULT NULL,
   `teori` int(11) DEFAULT NULL,
   `praktek` int(11) DEFAULT NULL,
-  `kerjalapang` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_matakuliah_geologi`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+  `kerja_lapangan` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel belajar.matakuliah_geologi: ~43 rows (lebih kurang)
+-- Membuang data untuk tabel belajar.matakuliah_geologi: ~15 rows (lebih kurang)
 /*!40000 ALTER TABLE `matakuliah_geologi` DISABLE KEYS */;
-INSERT INTO `matakuliah_geologi` (`id_matakuliah_geologi`, `kd_matakuliah_geologi`, `no`, `namamatakuliah_geologi`, `semester`, `teori`, `praktek`, `kerjalapang`) VALUES
-	(1, 'MG-0001', 1, 'Pendidikan Pancasila', 1, 2, NULL, NULL),
-	(2, 'MG-0002', 2, 'Matematika Terapan', 1, 2, NULL, NULL),
-	(3, 'MG-0003', 3, 'Fisika Terapan', 1, 1, 1, NULL),
-	(4, 'MG-0004', 4, 'Kimia Terapan', 1, 1, 1, NULL),
-	(5, 'MG-0005', 5, 'Geologi Dasar', 1, 2, NULL, NULL),
-	(6, 'MG-0006', 6, 'Mineralogi', 1, 1, 1, NULL),
-	(7, 'MG-0007', 7, 'Petrologi', 1, 1, 2, NULL),
-	(8, 'MG-0008', 8, 'Geomorfologi Terapan', 1, 1, 1, NULL),
-	(9, 'MG-0010', 9, 'Penginderaan Jauh', 1, 1, 2, NULL),
-	(10, 'MG-0011', 1, 'Kewarganegaraan', 1, 2, NULL, NULL),
-	(11, 'MG-0012', 2, 'Survei Pemetaan', 1, 1, 2, NULL),
-	(12, 'MG-0013', 3, 'Geologi Struktur', 1, 1, 1, NULL),
-	(13, 'MG-0014', 4, 'Geologi Teknik Tambang', 1, 1, 1, NULL),
-	(14, 'MG-0015', 5, 'Sedimentologi', 1, 1, NULL, NULL),
-	(15, 'MG-0016', 6, 'Geohidrologi', 1, 1, 2, NULL),
-	(16, 'MG-0017', 7, 'Genesa Mineral dan Batubara', 1, 2, NULL, NULL),
-	(17, 'MG-0018', 8, 'Prinsip Stratigrafi', 1, 2, NULL, NULL),
-	(18, 'MG-0019', 9, 'Aplikasi Komputer Geologi', 1, 1, 2, NULL),
-	(19, 'MG-0020', 1, 'Agama', 1, 2, NULL, NULL),
-	(20, 'MG-0021', 2, 'Geolistrik Eksplorasi Pertambangan', 1, 1, 2, NULL),
-	(21, 'MG-0022', 3, 'Geoteknik', 1, 1, 2, NULL),
-	(22, 'MG-0023', 4, 'Pengantar Statistik', 1, 2, NULL, NULL),
-	(23, 'MG-0024', 5, 'Bahasa Inggris', 1, 1, 1, NULL),
-	(24, 'MG-0025', 6, 'Geologi Eksplorasi', 1, 2, NULL, NULL),
-	(25, 'MG-0026', 7, 'Pemetaan Geologi', 1, 2, 2, NULL),
-	(26, 'MG-0027', 8, 'Peraturan dan K3 Pertambangan', 1, 1, NULL, NULL),
-	(27, 'MG-0028', 9, 'Ekskursi', 1, NULL, NULL, 1),
-	(28, 'MG-0029', 1, 'Bahasa Indonesia', 1, 2, NULL, NULL),
-	(29, 'MG-0030', 2, 'Geostatistik', 1, 2, NULL, NULL),
-	(30, 'MG-0031', 3, 'Kewirausahaan', 1, 2, NULL, NULL),
-	(31, 'MG-0032', 4, 'Budaya Kerja', 1, 1, NULL, NULL),
-	(32, 'MG-0033', 5, 'Perhitungan Sumberdaya Geologi', 1, 1, 2, NULL),
-	(33, 'MG-0034', 6, 'Geologi Lingkungan', 1, 1, 2, NULL),
-	(34, 'MG-0035', 7, 'Geokimia Eksplorasi', 1, 1, 2, NULL),
-	(35, 'MG-0036', 8, 'Kapita Selekta', 1, 1, NULL, NULL),
-	(36, 'MG-0037', 9, 'Teknik Pengeboran Eksplorasi', 1, 1, 2, NULL),
-	(37, 'MG-0038', 1, 'Program Praktik Industri I', 5, NULL, NULL, 18),
-	(38, 'MG-0039', 1, 'Program Praktik Industri II', 6, NULL, NULL, 16),
-	(39, 'MG-0040', 2, 'Proyek Akhir', 6, NULL, 2, NULL),
-	(47, 'MG-0041', 1, 'olahraga', 1, 3, 2, 18),
-	(48, 'MG-0042', NULL, 'penjaskes', 1, 2, 3, 16),
-	(49, 'MG-0043', NULL, 'teknik', 6, NULL, NULL, NULL),
-	(50, 'MG-0044', NULL, 'penjaskes', 1, 9, NULL, NULL);
+INSERT INTO `matakuliah_geologi` (`id`, `no`, `matakuliah`, `semester`, `teori`, `praktek`, `kerja_lapangan`) VALUES
+	(1, 1, 'Pendidikan Pancasila', 1, 2, 0, 0),
+	(2, 2, 'Matematika Terapan', 1, 2, 0, 0),
+	(3, 3, ' Fisika Terapan', 1, 1, 1, 0),
+	(4, 4, 'Kimia Terapan', 1, 1, 1, 0),
+	(5, 5, 'Geologi Dasar', 1, 2, 0, 0),
+	(6, 6, 'Mineralogi', 1, 1, 1, 0),
+	(7, 7, 'Petrologi', 1, 1, 2, 0),
+	(8, 8, 'Geomorfologi Terapan', 1, 1, 1, 0),
+	(9, 9, 'Penginderaan Jauh', 1, 1, 2, 0),
+	(10, 1, 'Kewarganegaraan', 2, 2, 0, 0),
+	(11, 2, 'Survei Pemetaan', 2, 1, 2, 0),
+	(12, 3, 'Geologi Struktur', 2, 1, 1, 0),
+	(13, 4, 'Geologi Teknik Tambang', 2, 1, 1, 0),
+	(14, 5, 'Sedimentologi', 2, 1, 0, 0),
+	(15, 6, 'Geohidrologi', 2, 1, 2, 0),
+	(16, 7, 'Genesa Mineral dan Batubara', 2, 2, 0, 0),
+	(17, 8, 'Prinsip Stratigrafi', 2, 2, 0, 0),
+	(18, 9, 'Aplikasi Komputer Geologi', 2, 1, 2, 0),
+	(19, 1, 'Agama', 3, 2, 0, 0),
+	(20, 2, 'Geolistrik Eksplorasi Pertambangan', 3, 1, 2, 0),
+	(21, 3, 'Geoteknik', 3, 1, 2, 0),
+	(22, 4, 'Pengantar Statistik', 3, 2, 0, 0),
+	(23, 5, 'Bahasa Inggris', 3, 1, 1, 0),
+	(24, 6, 'Geologi Eksplorasi', 3, 2, 0, 0),
+	(25, 7, 'Pemetaan Geologi', 3, 2, 2, 0),
+	(26, 8, 'Peraturan dan K3 Pertambangan', 3, 1, 0, 0),
+	(27, 9, 'Ekskursi', 3, 0, 0, 1),
+	(28, 1, 'Bahasa Indonesia', 4, 2, 0, 0),
+	(29, 2, 'Geostatistik', 4, 2, 0, 0),
+	(30, 3, 'Kewirausahaan', 4, 2, 0, 0),
+	(31, 4, 'Budaya Kerja', 4, 1, 0, 0),
+	(32, 5, 'Perhitungan Sumberdaya Geologi', 4, 1, 2, 0),
+	(33, 6, 'Geologi Lingkungan', 4, 1, 2, 0),
+	(34, 7, 'Geokimia Eksplorasi', 4, 1, 2, 0),
+	(35, 8, 'Kapita Selekta', 4, 1, 0, 0),
+	(36, 9, 'Teknik Pengeboran Eksplorasi', 4, 1, 2, 0),
+	(37, 1, 'Program Praktik Industri I', 5, NULL, NULL, 18),
+	(38, 1, 'Program Praktik Industri II', 6, NULL, NULL, 16),
+	(39, 2, 'Proyek Akhir', 6, NULL, 2, NULL);
 /*!40000 ALTER TABLE `matakuliah_geologi` ENABLE KEYS */;
 
 -- membuang struktur untuk table belajar.matakuliah_metalurgi
 CREATE TABLE IF NOT EXISTS `matakuliah_metalurgi` (
-  `id_matakuliah_metalurgi` int(11) NOT NULL AUTO_INCREMENT,
-  `kd_matakuliah_metalurgi` varchar(50) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL,
   `no` int(11) DEFAULT NULL,
-  `namamatakuliah_metalurgi` varchar(50) DEFAULT NULL,
+  `matakuliah` varchar(50) DEFAULT NULL,
   `semester` int(11) DEFAULT NULL,
   `teori` int(11) DEFAULT NULL,
   `praktek` int(11) DEFAULT NULL,
-  `kerjalapang` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_matakuliah_metalurgi`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+  `kerja_lapangan` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel belajar.matakuliah_metalurgi: ~37 rows (lebih kurang)
+-- Membuang data untuk tabel belajar.matakuliah_metalurgi: ~33 rows (lebih kurang)
 /*!40000 ALTER TABLE `matakuliah_metalurgi` DISABLE KEYS */;
-INSERT INTO `matakuliah_metalurgi` (`id_matakuliah_metalurgi`, `kd_matakuliah_metalurgi`, `no`, `namamatakuliah_metalurgi`, `semester`, `teori`, `praktek`, `kerjalapang`) VALUES
-	(1, 'MM-0001', 1, 'Pendidikan Pancasila', 1, 2, NULL, NULL),
-	(2, 'MM-0002', 2, 'Matematika Terapan dan Statistika', 1, 2, NULL, NULL),
-	(3, 'MM-0003', 3, 'Fisika Terapan', 1, 1, NULL, NULL),
-	(4, 'MM-0004', 4, 'Kimia Terapan', 1, 2, 2, NULL),
-	(5, 'MM-0005', 5, 'Pengantar Metalurgi', 1, 2, NULL, NULL),
-	(6, 'MM-0006', 6, 'Dasar Kelistrikan ', 1, 1, 2, NULL),
-	(7, 'MM-0007', 7, 'Dasar Permesinan', 1, 1, 2, NULL),
-	(8, 'MM-0008', 8, 'Mineralogi Dasar', 1, 1, 2, NULL),
-	(9, 'MM-0009', 1, 'Kewarganegaraan', 2, 2, NULL, NULL),
-	(10, 'MM-0010', 2, 'Pengolahan Mineral', 2, 2, 2, NULL),
-	(11, 'MM-0011', 3, 'Hidrometalurgi', 2, 2, 2, NULL),
-	(12, 'MM-0012', 4, 'Elektrometalurgi', 2, 2, 2, NULL),
-	(13, 'MM-0013', 5, 'Pirometalurgi', 2, 2, 2, NULL),
-	(14, 'MM-0014', 6, 'Budaya Kerja', 2, 1, NULL, NULL),
-	(15, 'MM-0015', 7, 'Pengetahuan Lingkungan Metalurgi', 2, 1, NULL, NULL),
-	(16, 'MM-0016', 1, 'Agama', 3, 2, NULL, NULL),
-	(17, 'MM-0017', 2, 'Metalurgi Besi Baja', 3, 3, NULL, NULL),
-	(18, 'MM-0018', 3, 'Metalurgi Non Ferrous I', 3, NULL, NULL, NULL),
-	(19, 'MM-0019', 4, 'Kendali Proses', 3, 1, 3, NULL),
-	(20, 'MM-0020', 5, 'Kapita Selekta', 3, 1, NULL, NULL),
-	(21, 'MM-0021', 6, 'Pengolahan dan Pemanfaatan Batubara', 3, 1, 2, NULL),
-	(22, 'MM-0022', 7, 'Bahasa Inggris', 3, 1, 3, NULL),
-	(23, 'MM-0023', 1, 'Bahasa Indonesia', 4, 2, NULL, NULL),
-	(24, 'MM-0024', 2, 'Metalurgi Non Ferrous II', 4, 2, NULL, NULL),
-	(25, 'MM-0025', 3, 'Kewirausahaan', 4, 2, NULL, 1),
-	(26, 'MM-0026', 4, 'Pemanfaatan Mineral Industri', 4, 2, 2, NULL),
-	(27, 'MM-0027', 5, 'Tanur dan Bahan Bakar', 4, 2, NULL, NULL),
-	(28, 'MM-0028', 6, 'Keselamatan dan Kesehatan Kerja Metalurgi', 4, 2, 2, NULL),
-	(29, 'MM-0029', 7, 'Aplikasi Komputer Metalurgi', 4, NULL, 2, NULL),
-	(30, 'MM-0030', 8, 'Ekskursi Pabrik', 4, NULL, NULL, 1),
-	(31, 'MM-0031', 1, 'Kerja Praktik Lapangan I', 5, NULL, NULL, 18),
-	(32, 'MM-0032', 1, 'Kerja Praktek Lapangan II', 6, NULL, NULL, 16),
-	(33, 'MM-0033', 2, 'Proyek Akhir', 6, NULL, 2, NULL),
-	(34, 'MM-0034', NULL, 'olah', 1, NULL, NULL, NULL),
-	(35, 'MM-0035', NULL, NULL, 1, NULL, NULL, NULL),
-	(36, 'MM-0036', NULL, NULL, 1, NULL, NULL, NULL),
-	(37, 'MM-0037', NULL, NULL, 1, NULL, NULL, NULL);
+INSERT INTO `matakuliah_metalurgi` (`id`, `no`, `matakuliah`, `semester`, `teori`, `praktek`, `kerja_lapangan`) VALUES
+	(0, 1, 'Pendidikan Pancasila', 1, 2, 0, 0),
+	(1, 2, 'Matematika Terapan dan Statistika', 1, 2, NULL, NULL),
+	(2, 3, 'Fisika Terapan', 1, 1, NULL, NULL),
+	(3, 4, 'Kimia Terapan', 1, 2, 2, NULL),
+	(4, 5, 'Pengantar Metalurgi', 1, 2, NULL, NULL),
+	(5, 6, 'Dasar Kelistrikan ', 1, 1, 2, NULL),
+	(6, 7, 'Dasar Permesinan', 1, 1, 2, NULL),
+	(7, 8, 'Mineralogi Dasar', 1, 1, 2, NULL),
+	(8, 1, 'Kewarganegaraan', 2, 2, NULL, NULL),
+	(9, 2, 'Pengolahan Mineral', 2, 2, 2, NULL),
+	(10, 3, 'Hidrometalurgi', 2, 2, 2, NULL),
+	(11, 4, 'Elektrometalurgi', 2, 2, 2, NULL),
+	(12, 5, 'Pirometalurgi', 2, 2, 2, NULL),
+	(13, 6, 'Budaya Kerja', 2, 1, NULL, NULL),
+	(14, 7, 'Pengetahuan Lingkungan Metalurgi', 2, 1, NULL, NULL),
+	(15, 1, 'Agama', 3, 2, NULL, NULL),
+	(16, 2, 'Metalurgi Besi Baja', 3, 3, NULL, NULL),
+	(17, 3, 'Metalurgi Non Ferrous I', 3, NULL, NULL, NULL),
+	(18, 4, 'Kendali Proses', 3, 1, 3, NULL),
+	(19, 5, 'Kapita Selekta', 3, 1, NULL, NULL),
+	(20, 6, 'Pengolahan dan Pemanfaatan Batubara', 3, 1, 2, NULL),
+	(21, 7, 'Bahasa Inggris', 3, 1, 3, NULL),
+	(22, 1, 'Bahasa Indonesia', 4, 2, NULL, NULL),
+	(23, 2, 'Metalurgi Non Ferrous II', 4, 2, NULL, NULL),
+	(24, 3, 'Kewirausahaan', 4, 2, NULL, 1),
+	(25, 4, 'Pemanfaatan Mineral Industri', 4, 2, 2, NULL),
+	(26, 5, 'Tanur dan Bahan Bakar', 4, 2, NULL, NULL),
+	(27, 6, 'Keselamatan dan Kesehatan Kerja Metalurgi', 4, 2, 2, NULL),
+	(28, 7, 'Aplikasi Komputer Metalurgi', 4, NULL, 2, NULL),
+	(29, 8, 'Ekskursi Pabrik', 4, NULL, NULL, 1),
+	(30, 1, 'Kerja Praktik Lapangan I', 5, NULL, NULL, 18),
+	(31, 1, 'Kerja Praktek Lapangan II', 6, NULL, NULL, 16),
+	(32, 2, 'Proyek Akhir', 6, NULL, 2, NULL);
 /*!40000 ALTER TABLE `matakuliah_metalurgi` ENABLE KEYS */;
 
 -- membuang struktur untuk table belajar.matakuliah_pertambangan
 CREATE TABLE IF NOT EXISTS `matakuliah_pertambangan` (
-  `id_matakuliah_pertambangan` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `kd_matakuliah_pertambangan` varchar(50) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL,
   `no` int(11) DEFAULT NULL,
-  `namamatakuliah_pertambangan` varchar(50) DEFAULT NULL,
+  `matakuliah` varchar(50) DEFAULT NULL,
   `semester` int(11) DEFAULT NULL,
   `teori` int(11) DEFAULT NULL,
   `praktek` int(11) DEFAULT NULL,
-  `kerjalapang` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_matakuliah_pertambangan`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+  `kerja_lapangan` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel belajar.matakuliah_pertambangan: ~39 rows (lebih kurang)
+-- Membuang data untuk tabel belajar.matakuliah_pertambangan: ~38 rows (lebih kurang)
 /*!40000 ALTER TABLE `matakuliah_pertambangan` DISABLE KEYS */;
-INSERT INTO `matakuliah_pertambangan` (`id_matakuliah_pertambangan`, `kd_matakuliah_pertambangan`, `no`, `namamatakuliah_pertambangan`, `semester`, `teori`, `praktek`, `kerjalapang`) VALUES
-	(1, 'MP-0001', 1, 'Pendidikan Pancasila', 1, 2, NULL, NULL),
-	(2, 'MP-0002', 2, 'Matematika Terapan', 1, 2, NULL, NULL),
-	(3, 'MP-0003', 3, 'Fisika Terapan', 1, 1, NULL, 1),
-	(4, 'MP-0004', 4, 'Kimia Terapan', 1, 1, NULL, 1),
-	(5, 'MP-0005', 5, 'Statistika Dasar', 1, 1, NULL, 1),
-	(6, 'MP-0006', 6, 'Geologi Dasar', 1, 1, NULL, 2),
-	(7, 'MP-0007', 7, 'Kristalografi & Mineralogi', 1, 1, NULL, 2),
-	(8, 'MP-0008', 8, 'Pengantar Rekayasa Tambang', 1, 1, NULL, 1),
-	(9, 'MP-0009', 9, 'Mekanika Teknik', 1, 2, NULL, NULL),
-	(10, 'MP-0010', 1, 'Pendidikan Kewarganegaraan', 2, 2, NULL, NULL),
-	(11, 'MP-0011', 2, 'Genesa Bahan Galian', 2, 2, NULL, NULL),
-	(12, 'MP-0012', 3, 'Survey dan Pemetaan', 2, 1, 2, NULL),
-	(13, 'MP-0013', 4, 'Metode Penambangan', 2, 2, 1, NULL),
-	(14, 'MP-0014', 5, 'Kapita Selekta', 2, 2, NULL, NULL),
-	(15, 'MP-0015', 6, 'Teknik Eksplorasi', 2, 1, 1, NULL),
-	(16, 'MP-0016', 7, 'Pengantar Mekanika Tanah dan Batuan', 2, 1, 2, NULL),
-	(17, 'MP-0017', 8, 'Geologi Struktur', 2, 1, 2, NULL),
-	(18, 'MP-0018', 1, 'Pendidikan Agama', 3, 2, NULL, NULL),
-	(19, 'MP-0019', 2, 'Budaya Kerja', 3, 2, NULL, NULL),
-	(20, 'MP-0020', 3, 'Pengantar Ventilasi Tambang', 3, 1, 1, NULL),
-	(21, 'MP-0021', 4, 'Geoteknik Tambang', 3, 1, 1, NULL),
-	(22, 'MP-0022', 5, 'Penambangan dan Pemanfaatan Batubara', 3, 1, 1, NULL),
-	(23, 'MP-0023', 6, 'Pengolahan Bahan Galian', 3, 2, 1, NULL),
-	(24, 'MP-0024', 7, 'Pemindahan Tanah Mekanis', 3, 2, 1, NULL),
-	(25, 'MP-0025', 8, 'Teknik Pengeboran dan Peledakan', 3, 1, 2, NULL),
-	(26, 'MP-0026', 9, 'Ekskursi Tambang', 3, NULL, NULL, 1),
-	(27, 'MP-0027', 1, 'Bahasa Indonesia', 4, 2, NULL, NULL),
-	(28, 'MP-0028', 2, 'Bahasa Inggris', 4, 1, 1, NULL),
-	(29, 'MP-0029', 3, 'Kewirausahaan', 4, 2, NULL, NULL),
-	(30, 'MP-0030', 4, 'Lingkungan Pertambangan Peraturan', 4, 2, NULL, NULL),
-	(31, 'MP-0031', 5, 'Perundangan dan K3 Pertambangan', 4, 1, 2, NULL),
-	(32, 'MP-0032', 6, 'Aplikasi Komputer Pertambangan', 4, NULL, 2, NULL),
-	(33, 'MP-0033', 7, 'Teknik Menyusun Laporan', 4, 2, NULL, NULL),
-	(34, 'MP-0034', 8, 'Penyaliran Tambang', 4, 1, 1, NULL),
-	(35, 'MP-0035', 9, 'Perancangan Tambang', 4, 1, 2, NULL),
-	(36, 'MP-0036', 1, 'Program Praktik Industri I', 5, NULL, NULL, 18),
-	(37, 'MP-0037', 1, 'Program Praktik Industri II', 6, NULL, NULL, 16),
-	(38, 'MP-0038', 2, 'Proyek Akhir', 6, NULL, 2, NULL),
-	(40, 'MP-0039', NULL, 'coba', 1, NULL, NULL, NULL);
+INSERT INTO `matakuliah_pertambangan` (`id`, `no`, `matakuliah`, `semester`, `teori`, `praktek`, `kerja_lapangan`) VALUES
+	(0, 1, 'Pendidikan Pancasila', 1, 2, NULL, NULL),
+	(1, 2, 'Matematika Terapan', 1, 2, NULL, NULL),
+	(2, 3, 'Fisika Terapan', 1, 1, NULL, 1),
+	(3, 4, 'Kimia Terapan', 1, 1, NULL, 1),
+	(4, 5, 'Statistika Dasar', 1, 1, NULL, 1),
+	(5, 6, 'Geologi Dasar', 1, 1, NULL, 2),
+	(6, 7, 'Kristalografi & Mineralogi', 1, 1, NULL, 2),
+	(7, 8, 'Pengantar Rekayasa Tambang', 1, 1, NULL, 1),
+	(8, 9, 'Mekanika Teknik', 1, 2, NULL, NULL),
+	(9, 1, 'Pendidikan Kewarganegaraan', 2, 2, NULL, NULL),
+	(10, 2, 'Genesa Bahan Galian', 2, 2, NULL, NULL),
+	(11, 3, 'Survey dan Pemetaan', 2, 1, 2, NULL),
+	(12, 4, 'Metode Penambangan', 2, 2, 1, NULL),
+	(13, 5, 'Kapita Selekta', 2, 2, NULL, NULL),
+	(14, 6, 'Teknik Eksplorasi', 2, 1, 1, NULL),
+	(15, 7, 'Pengantar Mekanika Tanah dan Batuan', 2, 1, 2, NULL),
+	(16, 8, 'Geologi Struktur', 2, 1, 2, NULL),
+	(17, 1, 'Pendidikan Agama', 3, 2, NULL, NULL),
+	(18, 2, 'Budaya Kerja', 3, 2, NULL, NULL),
+	(19, 3, 'Pengantar Ventilasi Tambang', 3, 1, 1, NULL),
+	(20, 4, 'Geoteknik Tambang', 3, 1, 1, NULL),
+	(21, 5, 'Penambangan dan Pemanfaatan Batubara', 3, 1, 1, NULL),
+	(22, 6, 'Pengolahan Bahan Galian', 3, 2, 1, NULL),
+	(23, 7, 'Pemindahan Tanah Mekanis', 3, 2, 1, NULL),
+	(24, 8, 'Teknik Pengeboran dan Peledakan', 3, 1, 2, NULL),
+	(25, 9, 'Ekskursi Tambang', 3, NULL, NULL, 1),
+	(26, 1, 'Bahasa Indonesia', 4, 2, NULL, NULL),
+	(27, 2, 'Bahasa Inggris', 4, 1, 1, NULL),
+	(28, 3, 'Kewirausahaan', 4, 2, NULL, NULL),
+	(29, 4, 'Lingkungan Pertambangan Peraturan', 4, 2, NULL, NULL),
+	(30, 5, 'Perundangan dan K3 Pertambangan', 4, 1, 2, NULL),
+	(31, 6, 'Aplikasi Komputer Pertambangan', 4, NULL, 2, NULL),
+	(32, 7, 'Teknik Menyusun Laporan', 4, 2, NULL, NULL),
+	(33, 8, 'Penyaliran Tambang', 4, 1, 1, NULL),
+	(34, 9, 'Perancangan Tambang', 4, 1, 2, NULL),
+	(35, 1, 'Program Praktik Industri I', 5, NULL, NULL, 18),
+	(36, 1, 'Program Praktik Industri II', 6, NULL, NULL, 16),
+	(37, 2, 'Proyek Akhir', 6, NULL, 2, NULL);
 /*!40000 ALTER TABLE `matakuliah_pertambangan` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.mengajar
-CREATE TABLE IF NOT EXISTS `mengajar` (
-  `id_mengajar` int(10) NOT NULL AUTO_INCREMENT,
-  `kd_mengajar` varchar(50) DEFAULT NULL,
-  `kelas` varchar(50) DEFAULT NULL,
-  `prodi` varchar(50) DEFAULT NULL,
-  `matkul` varchar(50) DEFAULT NULL,
-  `dosenpengajar` varchar(50) DEFAULT NULL,
-  `ruangan` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id_mengajar`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.mengajar: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `mengajar` DISABLE KEYS */;
-INSERT INTO `mengajar` (`id_mengajar`, `kd_mengajar`, `kelas`, `prodi`, `matkul`, `dosenpengajar`, `ruangan`) VALUES
-	(1, 'C0001', '2D', 'Teknik Geologi', 'Agama', 'Dr.Supriyadi S.T.,M.T', 'B03');
-/*!40000 ALTER TABLE `mengajar` ENABLE KEYS */;
 
 -- membuang struktur untuk table belajar.migrations
 CREATE TABLE IF NOT EXISTS `migrations` (
@@ -429,126 +217,6 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 /*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
 
--- membuang struktur untuk table belajar.pegawai
-CREATE TABLE IF NOT EXISTS `pegawai` (
-  `id_pegawai` int(11) NOT NULL AUTO_INCREMENT,
-  `kd_pegawai` varchar(50) DEFAULT NULL,
-  `namapegawai` varchar(50) DEFAULT NULL,
-  `alamatpegawai` varchar(50) DEFAULT NULL,
-  `jabatan` varchar(50) DEFAULT NULL,
-  `gambar` blob,
-  PRIMARY KEY (`id_pegawai`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.pegawai: ~4 rows (lebih kurang)
-/*!40000 ALTER TABLE `pegawai` DISABLE KEYS */;
-INSERT INTO `pegawai` (`id_pegawai`, `kd_pegawai`, `namapegawai`, `alamatpegawai`, `jabatan`, `gambar`) VALUES
-	(1, 'PGW-0001', 'sk', 'korea', 'Ceo', NULL),
-	(2, 'PGW-0002', 'djo kho', 'banyumasi', 'wirausaha', NULL),
-	(3, 'PGW-0003', 'll', 'kk', 'jj', NULL),
-	(4, 'PGW-0004', 'hjh', NULL, 'hh', NULL);
-/*!40000 ALTER TABLE `pegawai` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.praktikum
-CREATE TABLE IF NOT EXISTS `praktikum` (
-  `id_praktikum` int(10) NOT NULL AUTO_INCREMENT,
-  `kd_praktikum` varchar(50) DEFAULT NULL,
-  `namapraktikum` varchar(50) DEFAULT NULL,
-  `kelaspraktikum` varchar(50) DEFAULT NULL,
-  `ruangpraktikum` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id_praktikum`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.praktikum: ~3 rows (lebih kurang)
-/*!40000 ALTER TABLE `praktikum` DISABLE KEYS */;
-INSERT INTO `praktikum` (`id_praktikum`, `kd_praktikum`, `namapraktikum`, `kelaspraktikum`, `ruangpraktikum`) VALUES
-	(1, 'A0001', 'Geologi', 'Teknik Geologi (2D)', 'LAB Geologi'),
-	(2, 'A0002', 'Pertambangan', 'Teknik Pertambangan (2F)', 'LAB Pertambangan'),
-	(3, 'A0003', 'Metalurgi', 'Teknik Metalurgi (2G)', 'LAB Metalurgi');
-/*!40000 ALTER TABLE `praktikum` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.prodi
-CREATE TABLE IF NOT EXISTS `prodi` (
-  `id_prodi` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  `namaprodi` varchar(50) DEFAULT NULL,
-  `materi` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`id_prodi`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.prodi: ~3 rows (lebih kurang)
-/*!40000 ALTER TABLE `prodi` DISABLE KEYS */;
-INSERT INTO `prodi` (`id_prodi`, `namaprodi`, `materi`) VALUES
-	(0000000001, 'Geologi', 'Eksplorasi Geologi, Geofisika, Geokimia dan Pemetaan'),
-	(0000000002, 'Pertambangan', 'Eksplorasi, Penambangan dan Pengolahan Bahan Galian'),
-	(0000000003, 'Metalurgi', 'Pengolahan, Pemurnian Mineral danPemanfaatan Batubara');
-/*!40000 ALTER TABLE `prodi` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.prodi_geologi
-CREATE TABLE IF NOT EXISTS `prodi_geologi` (
-  `id_prodi` int(11) NOT NULL AUTO_INCREMENT,
-  `visi` varchar(999) DEFAULT NULL,
-  `kd_misi` varchar(50) DEFAULT NULL,
-  `misi` varchar(999) DEFAULT NULL,
-  `tujuan` varchar(999) DEFAULT NULL,
-  PRIMARY KEY (`id_prodi`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.prodi_geologi: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `prodi_geologi` DISABLE KEYS */;
-INSERT INTO `prodi_geologi` (`id_prodi`, `visi`, `kd_misi`, `misi`, `tujuan`) VALUES
-	(1, 'menjadi politeknik terbaik bidang energi dan pertambangan di indonesia dan mampu bersaing di dunia', 'PRD-G-0001', '1. Menyelenggarakan pendidikan vokasi secara mandiri dengan penguatan soft skill\r\n2. Mengembangan penelitian dan pengabdian kepada masyarakat berorientasi teknologi inovatif\r\n3. Aktif merespond isu global dalam upaya peningkatan kapasitas lembaga dan akses layanan dengan memperhatikan kearifan lokal', '1. menghasilkan lulusan  yang profesional dalam bidang vokasi berstandart kompetensi nasional dan internasional.\r\n2. menghasilkan lulusan yang berdaya saing global.\r\n3. Menjadikan PEP Bandung sebagai pusat pengembangan kompetensi vokasi yang bersertifikat nasional dan internasional.\r\n4. Menghasilkan penelitian terapan dan implementasi IPTEK untuk peningkatan kualitas masyarakat\r\n5. Menjadikan pusat layanan bagi stakeholders yang bermutu dan efisien.');
-/*!40000 ALTER TABLE `prodi_geologi` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.prodi_metalurgi
-CREATE TABLE IF NOT EXISTS `prodi_metalurgi` (
-  `id_prodi` int(11) NOT NULL AUTO_INCREMENT,
-  `visi` varchar(999) DEFAULT NULL,
-  `kd_misi` varchar(50) DEFAULT NULL,
-  `misi` text,
-  `tujuan` varchar(999) DEFAULT NULL,
-  PRIMARY KEY (`id_prodi`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.prodi_metalurgi: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `prodi_metalurgi` DISABLE KEYS */;
-INSERT INTO `prodi_metalurgi` (`id_prodi`, `visi`, `kd_misi`, `misi`, `tujuan`) VALUES
-	(2, 'menjadikan politeknik terbaik bidang energi dan pertambangan di indonesia dan mampu bersaing di dunia', 'PRD-M-0001', '1. Menyelenggarakan pendidikan vokasi secara mandiri dengan penguatan soft skill\r\n2. Mengembangan penelitian dan pengabdian kepada masyarakat berorientasi teknologi inovatif\r\n3. Aktif merespond isu global dalam upaya peningkatan kapasitas lembaga dan akses layanan dengan memperhatikan kearifan lokal', '1. menghasilkan lulusan  yang profesional dalam bidang vokasi berstandart kompetensi nasional dan internasional.\r\n2. menghasilkan lulusan yang berdaya saing global.\r\n3. Menjadikan PEP Bandung sebagai pusat pengembangan kompetensi vokasi yang bersertifikat nasional dan internasional.\r\n4. Menghasilkan penelitian terapan dan implementasi IPTEK untuk peningkatan kualitas masyarakat\r\n5. Menjadikan pusat layanan bagi stakeholders yang bermutu dan efisien.');
-/*!40000 ALTER TABLE `prodi_metalurgi` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.prodi_pertambangan
-CREATE TABLE IF NOT EXISTS `prodi_pertambangan` (
-  `id_prodi` int(11) NOT NULL AUTO_INCREMENT,
-  `visi` varchar(999) DEFAULT NULL,
-  `kd_misi` varchar(50) DEFAULT NULL,
-  `misi` varchar(999) DEFAULT NULL,
-  `tujuan` varchar(999) DEFAULT NULL,
-  PRIMARY KEY (`id_prodi`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.prodi_pertambangan: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `prodi_pertambangan` DISABLE KEYS */;
-INSERT INTO `prodi_pertambangan` (`id_prodi`, `visi`, `kd_misi`, `misi`, `tujuan`) VALUES
-	(1, 'menjadi politeknik terbaik bidang energi dan pertambangan di indonesia dan mampu bersaing di dunia', 'PRD-P-0001', '1. Menyelenggarakan pendidikan vokasi secara mandiri dengan penguatan soft skill\r\n2. Mengembangan penelitian dan pengabdian kepada masyarakat berorientasi teknologi inovatif\r\n3. Aktif merespond isu global dalam upaya peningkatan kapasitas lembaga dan akses layanan dengan memperhatikan kearifan lokal', '1. menghasilkan lulusan  yang profesional dalam bidang vokasi berstandart kompetensi nasional dan internasional.\r\n2. menghasilkan lulusan yang berdaya saing global.\r\n3. Menjadikan PEP Bandung sebagai pusat pengembangan kompetensi vokasi yang bersertifikat nasional dan internasional.\r\n4. Menghasilkan penelitian terapan dan implementasi IPTEK untuk peningkatan kualitas masyarakat\r\n5. Menjadikan pusat layanan bagi stakeholders yang bermutu dan efisien.');
-/*!40000 ALTER TABLE `prodi_pertambangan` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.profil_lulusan
-CREATE TABLE IF NOT EXISTS `profil_lulusan` (
-  `id_profil_lulusan` int(15) NOT NULL AUTO_INCREMENT,
-  `kd_profil_lulusan` varchar(50) DEFAULT NULL,
-  `namaprofil_lulusan` varchar(50) DEFAULT NULL,
-  `keteranganprofil_lulusan` varchar(200) DEFAULT NULL,
-  `tahunajaran` year(4) DEFAULT NULL,
-  PRIMARY KEY (`id_profil_lulusan`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.profil_lulusan: ~3 rows (lebih kurang)
-/*!40000 ALTER TABLE `profil_lulusan` DISABLE KEYS */;
-INSERT INTO `profil_lulusan` (`id_profil_lulusan`, `kd_profil_lulusan`, `namaprofil_lulusan`, `keteranganprofil_lulusan`, `tahunajaran`) VALUES
-	(1, 'A001', 'Prodi Teknik Geologi', '• Sebagai Teknisi Geologi yang mampu menyelesaikan masalah pada bidang geologi.', '2019'),
-	(2, 'A002', 'Prodi Teknik Pertambangan', '• Sebagai Teknisi Tambang yang mampu menyelesaikan masalah pada bidang pertambangan.', '2019'),
-	(3, 'A003', 'Prodi Teknik Metalurgi', '• Sebagai Teknisi Tambang, khususnya operator pengolahan dan pemurnian minerba yang mampu menyelesaikan masalah pada bidang metalurgi ekstraktif.', '2019');
-/*!40000 ALTER TABLE `profil_lulusan` ENABLE KEYS */;
-
 -- membuang struktur untuk table belajar.tb_alamat_pendaftaran_mhs
 CREATE TABLE IF NOT EXISTS `tb_alamat_pendaftaran_mhs` (
   `id_alamat` int(11) NOT NULL AUTO_INCREMENT,
@@ -565,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `tb_alamat_pendaftaran_mhs` (
   CONSTRAINT `FK_alamat` FOREIGN KEY (`id_pendaftaran_mhs`) REFERENCES `tb_pendaftaran_mhs` (`id_pendaftaran_mhs`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel belajar.tb_alamat_pendaftaran_mhs: ~1 rows (lebih kurang)
+-- Membuang data untuk tabel belajar.tb_alamat_pendaftaran_mhs: ~0 rows (lebih kurang)
 /*!40000 ALTER TABLE `tb_alamat_pendaftaran_mhs` DISABLE KEYS */;
 INSERT INTO `tb_alamat_pendaftaran_mhs` (`id_alamat`, `id_pendaftaran_mhs`, `provinsi`, `kabupaten_kota`, `kecamatan`, `desa`, `dusun`, `rt_rw`, `alamat_lengkap`) VALUES
 	(1, 1, 'Bali', 'Gianyar', 'Sukawati', 'Sukawati', 'Br. Dlodtangluk', '08/09', 'jl sersan wayan lanus no 99');
@@ -1114,7 +782,7 @@ CREATE TABLE IF NOT EXISTS `tb_kecamatan` (
   CONSTRAINT `lesku_kecamatan_kab` FOREIGN KEY (`id_kabupaten`) REFERENCES `tb_kabupaten` (`id_kabupaten`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7202 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel belajar.tb_kecamatan: ~7.201 rows (lebih kurang)
+-- Membuang data untuk tabel belajar.tb_kecamatan: ~7.378 rows (lebih kurang)
 /*!40000 ALTER TABLE `tb_kecamatan` DISABLE KEYS */;
 INSERT INTO `tb_kecamatan` (`id_kecamatan`, `kecamatan`, `id_kabupaten`, `created_at`, `updated_at`) VALUES
 	(1, 'Bakongan', 1, '2018-07-15 10:19:22', '2018-07-15 10:19:22'),
@@ -8418,7 +8086,7 @@ CREATE TABLE IF NOT EXISTS `tb_pendaftaran_mhs` (
   PRIMARY KEY (`id_pendaftaran_mhs`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel belajar.tb_pendaftaran_mhs: ~1 rows (lebih kurang)
+-- Membuang data untuk tabel belajar.tb_pendaftaran_mhs: ~0 rows (lebih kurang)
 /*!40000 ALTER TABLE `tb_pendaftaran_mhs` DISABLE KEYS */;
 INSERT INTO `tb_pendaftaran_mhs` (`id_pendaftaran_mhs`, `tanggal_pendaftaran`, `email_mhs`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `gender`, `agama`, `no_induk_kependudukan`, `kewarganegaraan`, `jenis_tinggal`, `alat_transportasi`, `nomor_telepon`, `nomor_hp`, `kps`, `nomor_kps`, `id_program_studi`, `id_kelompok_mhs`, `no_registrasi`, `hasil_tes`, `foto_mhs`, `ijazah_skhun`, `ktp_kk`, `surat_keterangan_sehat`, `surat_industri`) VALUES
 	(1, '2019-07-11', 'gungcahyadipp@gmail.com', 'Anak Agung Gede Cahyadi Putra Palguna', 'Denpasar', '2000-10-22', 'Laki-laki', 'hindu', '5358620000003', 'Indonesia', 'bersama-orang-tua', 'sepeda-motor', '-', '082341297863', 'Y', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -8542,175 +8210,6 @@ INSERT INTO `tb_provinsi` (`id_provinsi`, `provinsi`, `created_at`, `updated_at`
 	(92, 'Papua Barat', '2018-07-15 10:22:27', '2018-07-15 10:22:27');
 /*!40000 ALTER TABLE `tb_provinsi` ENABLE KEYS */;
 
--- membuang struktur untuk table belajar.tenagaperpustakaan
-CREATE TABLE IF NOT EXISTS `tenagaperpustakaan` (
-  `id_tenagaperpustakaan` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `kd_tenagaperpustakaan` varchar(50) DEFAULT NULL,
-  `namatenagaperpustakaan` varchar(50) DEFAULT NULL,
-  `identitastenagaperpustakaan` varchar(50) DEFAULT NULL,
-  `tltenagaperpustakaan` date DEFAULT NULL,
-  `pendidikantenagaperpustakaan` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`id_tenagaperpustakaan`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.tenagaperpustakaan: ~3 rows (lebih kurang)
-/*!40000 ALTER TABLE `tenagaperpustakaan` DISABLE KEYS */;
-INSERT INTO `tenagaperpustakaan` (`id_tenagaperpustakaan`, `kd_tenagaperpustakaan`, `namatenagaperpustakaan`, `identitastenagaperpustakaan`, `tltenagaperpustakaan`, `pendidikantenagaperpustakaan`) VALUES
-	(1, 'TKA-G-0001', 'Tri Handajani, S.Sos., M.Si', '196710221996032002', '1967-10-22', 'UI/Magister Ilmu Perpustakan'),
-	(2, 'TKA-G-0002', 'Asep Rahmat, S.Sos.', '196309111985031002', '1963-09-11', 'Universitas Islam Nusantara/Sarjana Ilmu Perpustakaan'),
-	(3, 'TKA-G-0003', 'Muhammad Ghazali Hamzah, S.I.Pus.', '3273230609940002', '1994-09-06', 'Unpad/Sarjana Ilmu Perpustakaan');
-/*!40000 ALTER TABLE `tenagaperpustakaan` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.tka_geologi
-CREATE TABLE IF NOT EXISTS `tka_geologi` (
-  `id_tka_geologi` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `kd_tka_geologi` varchar(50) DEFAULT NULL,
-  `namatka_geologi` varchar(50) DEFAULT NULL,
-  `identitastka_geologi` varchar(50) DEFAULT NULL,
-  `tltka_geologi` date DEFAULT NULL,
-  `pendidikantka_geologi` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`id_tka_geologi`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.tka_geologi: ~3 rows (lebih kurang)
-/*!40000 ALTER TABLE `tka_geologi` DISABLE KEYS */;
-INSERT INTO `tka_geologi` (`id_tka_geologi`, `kd_tka_geologi`, `namatka_geologi`, `identitastka_geologi`, `tltka_geologi`, `pendidikantka_geologi`) VALUES
-	(1, 'TKA-G-0001', 'Rizki Lestari, S.Pd.', '3273056612890003', '1989-12-26', 'S1 Pendidikan Bahasa Indonesia'),
-	(2, 'TKA-G-0002', 'Arif Eka Putra, S.T.', '3273162810910002', '1991-10-28', 'S1 Teknik Informatika'),
-	(3, 'TKA-G-0003', 'Yandi Somantri, S.T.', '3204090101840006', '1984-01-01', 'S1 Teknik');
-/*!40000 ALTER TABLE `tka_geologi` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.tka_metalurgi
-CREATE TABLE IF NOT EXISTS `tka_metalurgi` (
-  `id_tka_metalurgi` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `kd_tka_metalurgi` varchar(50) DEFAULT NULL,
-  `namatka_metalurgi` varchar(50) DEFAULT NULL,
-  `identitastka_metalurgi` varchar(50) DEFAULT NULL,
-  `tltka_metalurgi` date DEFAULT NULL,
-  `pendidikantka_metalurgi` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`id_tka_metalurgi`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.tka_metalurgi: ~3 rows (lebih kurang)
-/*!40000 ALTER TABLE `tka_metalurgi` DISABLE KEYS */;
-INSERT INTO `tka_metalurgi` (`id_tka_metalurgi`, `kd_tka_metalurgi`, `namatka_metalurgi`, `identitastka_metalurgi`, `tltka_metalurgi`, `pendidikantka_metalurgi`) VALUES
-	(1, 'TKA-M-0001', 'Nizar Fanshuri, S.T.', '3278081304900008', '1990-04-13', 'S1 Teknik Informatika'),
-	(2, 'TKA-M-0002', 'Indah Kartikawati, S.Pd.', '3277014104820053', '1982-04-01', 'S1 Matematika'),
-	(3, 'TKA-M-0003', 'Gilang Lutfi, S.T.', '3273151803930004', '1993-03-18', 'S1 Manajemen Bisnis');
-/*!40000 ALTER TABLE `tka_metalurgi` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.tka_pertambangan
-CREATE TABLE IF NOT EXISTS `tka_pertambangan` (
-  `id_tka_pertambangan` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `kd_tka_pertambangan` varchar(50) DEFAULT NULL,
-  `namatka_pertambangan` varchar(50) DEFAULT NULL,
-  `identitastka_pertambangan` varchar(50) DEFAULT NULL,
-  `tltka_pertambangan` date DEFAULT NULL,
-  `pendidikantka_pertambangan` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`id_tka_pertambangan`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.tka_pertambangan: ~3 rows (lebih kurang)
-/*!40000 ALTER TABLE `tka_pertambangan` DISABLE KEYS */;
-INSERT INTO `tka_pertambangan` (`id_tka_pertambangan`, `kd_tka_pertambangan`, `namatka_pertambangan`, `identitastka_pertambangan`, `tltka_pertambangan`, `pendidikantka_pertambangan`) VALUES
-	(1, 'TKA-P-0001', 'Cipta Ariawan Maulana, S.T.', '3273220210870003', '1987-10-02', 'S1 Teknik Informatika'),
-	(2, 'TKA-P-0002', 'Dea Resti Damayanti, S.Pd.', '3273055612920003', '1992-12-16', 'S1 Pendidikan Bahasa Inggris'),
-	(3, 'TKA-P-0003', 'Nuri Rizki Lestari, S.I.Kom.', '3273215402920001', '1992-02-14', 'S1 Ilmu Komunikasi');
-/*!40000 ALTER TABLE `tka_pertambangan` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.tkl_geologi
-CREATE TABLE IF NOT EXISTS `tkl_geologi` (
-  `id_tkl_geologi` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `kd_tkl_geologi` varchar(50) DEFAULT NULL,
-  `namatkl_geologi` varchar(50) DEFAULT NULL,
-  `identitastkl_geologi` varchar(50) DEFAULT NULL,
-  `tltkl_geologi` date DEFAULT NULL,
-  `pendidikantkl_geologi` varchar(1000) DEFAULT NULL,
-  `penugasantkl_geologi` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`id_tkl_geologi`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.tkl_geologi: ~4 rows (lebih kurang)
-/*!40000 ALTER TABLE `tkl_geologi` DISABLE KEYS */;
-INSERT INTO `tkl_geologi` (`id_tkl_geologi`, `kd_tkl_geologi`, `namatkl_geologi`, `identitastkl_geologi`, `tltkl_geologi`, `pendidikantkl_geologi`, `penugasantkl_geologi`) VALUES
-	(1, 'TKL-G-0001', 'Dwi S. Pasa W., S.T.', '198705112015031003', '1987-05-11', 'S1 Teknik Pertambangan', 'Tenaga Laboran'),
-	(2, 'TKL-G-0002', 'Yusuf Nurulum, S.T.', '199007052015031006', '1990-07-05', 'S1 Teknik Pertambangan', 'Tenaga Laboran'),
-	(3, 'TKL-G-0003', 'Ekonur S. Laksono, S.T.', '198906302015031006', '1989-06-30', 'S1 Teknik Geologi', 'Teknisi'),
-	(4, 'TKL-G-0004', 'Widya Utama P., S.T.', '199010242015031004', '1990-01-02', 'S1 Teknik Pertambangan', 'Teknisi');
-/*!40000 ALTER TABLE `tkl_geologi` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.tkl_metalurgi
-CREATE TABLE IF NOT EXISTS `tkl_metalurgi` (
-  `id_tkl_metalurgi` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `kd_tkl_metalurgi` varchar(50) DEFAULT NULL,
-  `namatkl_metalurgi` varchar(50) DEFAULT NULL,
-  `identitastkl_metalurgi` varchar(50) DEFAULT NULL,
-  `tltkl_metalurgi` date DEFAULT NULL,
-  `pendidikantkl_metalurgi` varchar(1000) DEFAULT NULL,
-  `penugasantkl_metalurgi` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`id_tkl_metalurgi`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.tkl_metalurgi: ~3 rows (lebih kurang)
-/*!40000 ALTER TABLE `tkl_metalurgi` DISABLE KEYS */;
-INSERT INTO `tkl_metalurgi` (`id_tkl_metalurgi`, `kd_tkl_metalurgi`, `namatkl_metalurgi`, `identitastkl_metalurgi`, `tltkl_metalurgi`, `pendidikantkl_metalurgi`, `penugasantkl_metalurgi`) VALUES
-	(1, 'TKL-M-0001', 'Suwandono Jati, S.T.', '197811172009011002', '1978-11-17', 'S1 Teknik Elektro', 'Tenaga Laboran'),
-	(2, 'TKL-M-0002', 'Ina Fajria, S.T.', '199106042015032005', '1991-06-04', 'S1 Teknik Metalurgi', 'Tenaga Laboran'),
-	(3, 'TKL-M-0003', 'Zanescaya W., S.T.', '198909162015031003', '1989-09-16', 'S1 Teknik Pertambangan', 'Teknisi');
-/*!40000 ALTER TABLE `tkl_metalurgi` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.tkl_pertambangan
-CREATE TABLE IF NOT EXISTS `tkl_pertambangan` (
-  `id_tkl_pertambangan` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `kd_tkl_pertambangan` varchar(50) DEFAULT NULL,
-  `namatkl_pertambangan` varchar(50) DEFAULT NULL,
-  `identitastkl_pertambangan` varchar(50) DEFAULT NULL,
-  `tltkl_pertambangan` date DEFAULT NULL,
-  `pendidikantkl_pertambangan` varchar(1000) DEFAULT NULL,
-  `penugasantkl_pertambangan` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`id_tkl_pertambangan`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.tkl_pertambangan: ~3 rows (lebih kurang)
-/*!40000 ALTER TABLE `tkl_pertambangan` DISABLE KEYS */;
-INSERT INTO `tkl_pertambangan` (`id_tkl_pertambangan`, `kd_tkl_pertambangan`, `namatkl_pertambangan`, `identitastkl_pertambangan`, `tltkl_pertambangan`, `pendidikantkl_pertambangan`, `penugasantkl_pertambangan`) VALUES
-	(1, 'TKL-P-0001', 'Ramelia Puspita, S.T.', '199110302015032003', '1991-10-30', 'S1 Teknik Pertambangan', 'Tenaga Laboran'),
-	(2, 'TKL-P-0002', 'Rangga C., S.T.', '198904032015031003', '1989-04-03', 'S1 Teknik Pertambangan', 'Tenaga Laboran'),
-	(3, 'TKL-P-0003', 'Harnovi, S.T.', '199007062015031004', '1990-07-06', 'S1 Teknik Pertambangan', 'Teknisi');
-/*!40000 ALTER TABLE `tkl_pertambangan` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.ujian
-CREATE TABLE IF NOT EXISTS `ujian` (
-  `id_ujian` int(10) NOT NULL AUTO_INCREMENT,
-  `kd_ujian` varchar(50) DEFAULT NULL,
-  `matkulujian` varchar(50) DEFAULT NULL,
-  `kelas` varchar(50) DEFAULT NULL,
-  `ruangujian` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id_ujian`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.ujian: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `ujian` DISABLE KEYS */;
-INSERT INTO `ujian` (`id_ujian`, `kd_ujian`, `matkulujian`, `kelas`, `ruangujian`) VALUES
-	(1, 'B0001', 'Agama', '1D', 'C 03');
-/*!40000 ALTER TABLE `ujian` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.unit_pelaksanaan_teknis
-CREATE TABLE IF NOT EXISTS `unit_pelaksanaan_teknis` (
-  `id_unit_pelaksanaan_teknis` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `kd_unit_pelaksanaan_teknis` varchar(50) DEFAULT '0',
-  `namaunit_pelaksanaan_teknis` varchar(50) DEFAULT '0',
-  `tanggalunit_pelaksanaan_teknis` date DEFAULT NULL,
-  PRIMARY KEY (`id_unit_pelaksanaan_teknis`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.unit_pelaksanaan_teknis: ~2 rows (lebih kurang)
-/*!40000 ALTER TABLE `unit_pelaksanaan_teknis` DISABLE KEYS */;
-INSERT INTO `unit_pelaksanaan_teknis` (`id_unit_pelaksanaan_teknis`, `kd_unit_pelaksanaan_teknis`, `namaunit_pelaksanaan_teknis`, `tanggalunit_pelaksanaan_teknis`) VALUES
-	(2, 'UPT-0001', 'apa kekl', '2019-08-13'),
-	(3, 'UPT-0002', 'hubla', '2017-09-29');
-/*!40000 ALTER TABLE `unit_pelaksanaan_teknis` ENABLE KEYS */;
-
 -- membuang struktur untuk table belajar.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -8725,26 +8224,12 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Membuang data untuk tabel belajar.users: ~2 rows (lebih kurang)
+-- Membuang data untuk tabel belajar.users: ~1 rows (lebih kurang)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 	(1, 'kharisma', 'kharisma@gmail.com', NULL, '$2y$10$gNsmPIKYfOWhKWlVYgoSJunXUk/B2rUKnpWnuzDXevpFwI7Cya2BK', NULL, '2019-07-17 02:07:52', '2019-07-17 02:07:52'),
 	(3, 'admin', 'admin@gmail.com', '2019-07-17 11:55:29', 'admin', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-
--- membuang struktur untuk table belajar.visimisi
-CREATE TABLE IF NOT EXISTS `visimisi` (
-  `id_visimisi` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `namavisi` varchar(1000) DEFAULT NULL,
-  `namamisi` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`id_visimisi`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
--- Membuang data untuk tabel belajar.visimisi: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `visimisi` DISABLE KEYS */;
-INSERT INTO `visimisi` (`id_visimisi`, `namavisi`, `namamisi`) VALUES
-	(1, 'Menjadi Politeknik terbaik bidang energi dan pertambangan di Indonesia dan mampu bersaing di dunia', '1. Menyelenggarakan pendidikan vokasi secara mandiri dengan penguatan soft skill. 2. Mengembangkan penelitian dan pengabdian kepada masyarakat berorientasi teknologi inovatif. 3. Aktif merespon isu global dalam upaya peningkatan kapasitas lembaga dan akses layanan dengan memperhatikan kearifan lokal.');
-/*!40000 ALTER TABLE `visimisi` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

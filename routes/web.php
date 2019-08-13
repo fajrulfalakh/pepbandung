@@ -18,6 +18,8 @@ Auth::routes();
 
 Route::get('/portal/','PortalController@index');
 
+Route::get('/biodatamahasiswa/','BiodataMahasiswaController@index');
+
 Auth::routes();
 
 Route::get('/datadosen_geologi/{id}/delete','DataDosen_GeologiController@delete');
